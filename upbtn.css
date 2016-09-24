@@ -1,0 +1,79 @@
+/* КНОПКА изначально невидимая */
+div.upbtn {
+	display: none;
+	position: fixed;
+	cursor: pointer;
+	background: none;
+	text-align: center;
+	transition: all 0.2s linear;
+}
+@media screen and (max-width: 750px) {
+	div.upbtn {
+		/*left: 30px;	*/	/* кнопка слева внизу */
+		right: 30px;		/* кнопка справа внизу */
+		bottom: 30px;
+		width: 60px;
+		height: 60px;
+	}
+}
+@media screen and (min-width: 751px) {
+	div.upbtn {
+		left: 0px;
+		bottom: 0px;
+		width: 100px;
+		height: 100%;
+	}
+}
+/* КНОПКА видимая */
+div.upbtn.norm {
+	display: block;
+	background-color: #DDD;
+	transition: all 0.2s linear;
+}
+@media screen and (max-width: 750px) {
+	div.upbtn.norm {
+		opacity: 1;
+		border-radius: 30px; /* в два раза меньше стороны */
+		/* Material-кнопка для мобилки */
+		box-shadow: #0a0a0a 0px 2px 12px -2px;
+    	background-color: #2196F3;
+	}
+}
+@media screen and (min-width: 751px) {
+	div.upbtn.norm {
+		opacity: 0.2;
+	}
+	div.upbtn.norm:hover {
+		opacity: 0.5;
+	}
+}
+/* СТРЕЛКА */
+div.upbtn div.upbtnarr {
+	width: 40px;
+	height: 40px;
+	display: block;
+	transition: all 0.2s linear;
+	transform: rotate(0deg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: url(upbtn.png);
+}
+@media screen and (max-width: 750px) {
+	div.upbtn div.upbtnarr {
+		width: 40px;
+		height: 40px;
+		margin: 10px auto;
+	}
+}
+@media screen and (min-width: 751px) {
+	div.upbtn div.upbtnarr {
+		width: 40px;
+		height: 40px;
+		margin: 20px auto;
+	}
+}
+/* СТРЕЛКА перевёрнутая */
+div.upbtn div.upbtnarr.down {
+	/*transition: all 0.2s linear;*/
+	transform: rotate(180deg);
+}
